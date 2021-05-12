@@ -61,8 +61,9 @@ VAR=7                 # assign 7 to variable
 VAR=$(command)        # assign command output, e.g. VAR=$(awk '{ print $1 }' file)
 
 echo ${VAR}           # print current value of variable (== echo $VAR)
-
+```
 Examples for important pre-defined variables:
+```bash
 HOME   # path to home directory`
 PATH   # list of directories that will be searched for executables`
 PS1    # prompt layout`
