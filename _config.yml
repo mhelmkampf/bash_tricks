@@ -1,3 +1,5 @@
-# theme: jekyll-theme-cayman
-remote_theme: rundocs/jekyll-rtd-theme
+theme: jekyll-theme-cayman
+# remote_theme: rundocs/jekyll-rtd-theme
 # remote_theme: aterenin/minima-reboot
+highlighter: rouge
+title: bash tricks, variables and loops
