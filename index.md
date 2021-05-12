@@ -28,7 +28,7 @@ cd -       # return to last working directory
 Aliases are shortcuts for long or often-used commands. They can be made permanent by adding them to `~/.bashrc`, a file containing commands that are executed automatically upon starting the shell.
 
 ```bash
-alias <alias_name>="command"
+alias <alias_name>="<command>"
 
 # modify cd
 alias ..="cd .."
