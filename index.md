@@ -17,8 +17,9 @@ Ctrl + l   # clear screen (== clear)
 
 ```bash
 clear      # clear screen
-history    # display command history
-
+history    # display command history (combine e.g. with grep: history | grep 'cd')
+!n         # reissue command using history number
+           
 cd ~       # return to home directory (== $HOME)
 cd /       # return to root directory
 cd -       # return to last working directory
@@ -61,7 +62,7 @@ Variables are placeholders for information that can be retrieved or modified lat
 ```bash
 VAR="example text"    # assign string (text) to variable
 VAR=7                 # assign 7 to variable
-VAR=$(command)        # assign command output
+VAR=$(command)        # assign command output, e.g. VAR=$(awk '{ print $1 }' file)
 
 echo ${VAR}           # print current value of variable (== echo $VAR)
 ```
@@ -75,7 +76,7 @@ Examples for important pre-defined variables:
 
 ## Loops
 
-Loops allow you to perform an action multiple times, or repeat the same action with slight variations (e.g. multiple input files or lines). For and while loops are similar – usually for-loops are used when the number of iterations is known and/or small. While-loops are better suited for an unknown and/or large number of iterations.
+Loops allow you to perform an action multiple times, or repeat the same action with slight variations (e.g. multiple input files or lines). `for` and `while` loops are similar – usually `for` loops are used when the number of iterations is known and/or small. `while` loops are better suited for an unknown and/or large number of iterations.
 
 ```bash
 # Perform action (here: echo) for each item in list (A, B, C)
@@ -92,4 +93,11 @@ done
 
 # Use while to loop over lines in a file
 while read LINE ; do cat ${LINE}.fas ; done < list.txt
+
+# If-else statement
+if <condition> ; then
+  <action>
+else
+  <action>
+fi
 ```
