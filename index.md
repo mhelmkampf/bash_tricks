@@ -1,37 +1,95 @@
-## Welcome to GitHub Pages
+## Bash tricks
 
-You can use the [editor on GitHub](https://github.com/mhelmkampf/test/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+### _Keyboard shortcuts_
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+```bash
+tab        # auto-complete file/dir names
+up arrow   # previous command
+Ctrl + c   # interrupt / kill process
+Ctrl + d   # close shell (== exit)
 
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+Ctrl + a   # go to beginning of line
+Ctrl + e   # go to end of line
+Ctrl + l   # clear screen (== clear)
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+### _Quality-of-life commands_
 
-### Jekyll Themes
+```bash
+clear      # clear screen
+history    # display command history
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/mhelmkampf/test/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+cd ~       # return to home directory (== $HOME)
+cd /       # return to root directory
+cd -       # return to last working directory
+```
 
-### Support or Contact
+### _Aliases_
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+Aliases are shortcuts for long or often-used commands. They can be made permanent by adding them to `~/.bashrc`, a file containing commands that are executed automatically upon starting the shell.
+
+```bash
+alias <alias_name>="command"
+
+# modify cd
+alias ..="cd .."
+
+# long format and color for ls
+alias ll="ls -hl --color"
+
+# view your jobs in the queue 
+alias sq="squeue -u <user_id>"
+```
+
+### _Wildcards_
+
+```bash
+*         # matches any string of characters
+?         # matches any one character
+[abc]     # matches a, b, or c
+```
+Examples: 
+<br>`cp *.fas dir/`
+<br>`cat seq[AB].fas`
+
+<br>
+
+## Variables
+
+Variables are placeholders for information that can be retrieved or modified later. Typical values are strings (text, including file names and paths) and integers (numbers). The output (result) of another command can also be assigned, and wildcards are supported (see loops below).
+
+```bash
+VAR="example text"    # assign string (text) to variable
+VAR=7                 # assign 7 to variable
+VAR=$(command)        # assign command output
+
+echo ${VAR}           # print current value of variable (== echo $VAR)
+```
+Examples for important pre-defined variables:
+<br>
+`$HOME`
+<br>
+`$PATH`
+
+<br>
+
+## Loops
+
+Loops allow you to perform an action multiple times, or repeat the same action with slight variations (e.g. multiple input files or lines). For and while loops are similar – usually for-loops are used when the number of iterations is known and/or small. While-loops are better suited for an unknown and/or large number of iterations.
+
+```bash
+# Perform action (here: echo) for each item in list (A, B, C)
+for i in A B C ; do echo ${i} ; done
+
+# Loops can be written on one line using ";"
+for i in *.seq ; do cat ${i} ; done
+
+# In scripts, loops are usually indented
+for i in *.seq
+do
+  cat ${i}
+done
+
+# Use while to loop over lines in a file
+while read LINE ; do cat ${LINE}.fas ; done < list.txt
+```
