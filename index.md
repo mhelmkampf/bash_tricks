@@ -1,7 +1,7 @@
 ### Keyboard shortcuts
 
 ```bash
-tab        # auto-complete file/dir names
+tab        # auto-complete file / directory names
 up arrow   # previous command
 Ctrl + c   # interrupt / kill process
 Ctrl + d   # close shell (== exit)
@@ -16,9 +16,9 @@ Ctrl + l   # clear screen (== clear)
 ```bash
 clear      # clear screen
 history    # display command history (combine e.g. with grep: history | grep 'cd')
-!n         # reissue command using history number
+!<n>       # reissue command using history number
            
-cd ~       # return to home directory (== $HOME)
+cd ~       # return to home directory (== cd $HOME)
 cd /       # return to root directory
 cd -       # return to last working directory
 ```
@@ -64,34 +64,39 @@ echo ${VAR}           # print current value of variable (== echo $VAR)
 ```
 Examples for important pre-defined variables:
 <br>
-`$HOME`
+`HOME   # path to home directory`
 <br>
-`$PATH`
+`PATH   # list of directories that will be searched for executables`
+<br>
+`PS1    # prompt layout`
 
 ### Loops
 
 Loops allow you to perform an action multiple times, or repeat the same action with slight variations (e.g. multiple input files or lines). `for` and `while` loops are similar – usually `for` loops are used when the number of iterations is known and/or small. `while` loops are better suited for an unknown and/or large number of iterations.
 
 ```bash
-# Perform action (here: echo) for each item in list (A, B, C)
-for i in A B C ; do echo ${i} ; done
-
-# Loops can be written on one line using ";"
-for i in *.seq ; do cat ${i} ; done
-
-# In scripts, loops are usually indented
-for i in *.seq
+# General syntax: for each item in list, perform command(s)
+for item in <list>
 do
-  cat ${i}
+  <command1>
+  <command2>
+  ...
 done
 
-# Use while to loop over lines in a file
+# Loops are usually indented, but can be written on one line using ";"
+for item in <list> ; do <command1> ; <command2> ; ... ; done
+
+# The list can be a series of strings or a range of numbers 
+for i in A B C ; do echo ${i} ; done
+for i in {1..3} ; do echo ${i} ; done
+
+# If the list are lines of a file, use a while loop
 while read LINE ; do cat ${LINE}.fas ; done < list.txt
 
 # If-else statement
 if <condition> ; then
-  <action>
+  <command1>
 else
-  <action>
+  <command2>
 fi
 ```
