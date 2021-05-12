@@ -1,6 +1,4 @@
-## Bash tricks
-
-### _Keyboard shortcuts_
+### Keyboard shortcuts
 
 ```bash
 tab        # auto-complete file/dir names
@@ -13,7 +11,7 @@ Ctrl + e   # go to end of line
 Ctrl + l   # clear screen (== clear)
 ```
 
-### _Quality-of-life commands_
+### Quality-of-life commands
 
 ```bash
 clear      # clear screen
@@ -25,7 +23,7 @@ cd /       # return to root directory
 cd -       # return to last working directory
 ```
 
-### _Aliases_
+### Aliases
 
 Aliases are shortcuts for long or often-used commands. They can be made permanent by adding them to `~/.bashrc`, a file containing commands that are executed automatically upon starting the shell.
 
@@ -42,7 +40,7 @@ alias ll="ls -hl --color"
 alias sq="squeue -u <user_id>"
 ```
 
-### _Wildcards_
+### Wildcards
 
 ```bash
 *         # matches any string of characters
@@ -55,7 +53,7 @@ Examples:
 
 <br>
 
-## Variables
+### Variables
 
 Variables are placeholders for information that can be retrieved or modified later. Typical values are strings (text, including file names and paths) and integers (numbers). The output (result) of another command can also be assigned, and wildcards are supported (see loops below).
 
@@ -74,7 +72,7 @@ Examples for important pre-defined variables:
 
 <br>
 
-## Loops
+### Loops
 
 Loops allow you to perform an action multiple times, or repeat the same action with slight variations (e.g. multiple input files or lines). `for` and `while` loops are similar – usually `for` loops are used when the number of iterations is known and/or small. `while` loops are better suited for an unknown and/or large number of iterations.
 
