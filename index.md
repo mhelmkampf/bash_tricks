@@ -51,8 +51,6 @@ Examples:
 <br>`cp *.fas dir/`
 <br>`cat seq[AB].fas`
 
-<br>
-
 ### Variables
 
 Variables are placeholders for information that can be retrieved or modified later. Typical values are strings (text, including file names and paths) and integers (numbers). The output (result) of another command can also be assigned, and wildcards are supported (see loops below).
@@ -69,8 +67,6 @@ Examples for important pre-defined variables:
 `$HOME`
 <br>
 `$PATH`
-
-<br>
 
 ### Loops
 
