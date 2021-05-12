@@ -2,7 +2,7 @@ theme: jekyll-theme-cayman
 # remote_theme: aterenin/minima-reboot
 title: bash tricks, variables and loops
 
-/* solarized light syntax highlighting (base16) */
+# /* solarized light syntax highlighting (base16) */
 $base00: #fafafa !default;
 $base01: #073642 !default;
 $base02: #586e75 !default;
