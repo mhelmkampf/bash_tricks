@@ -47,9 +47,6 @@ alias sq="squeue -u <user_id>"
 ?         # matches any one character
 [abc]     # matches a, b, or c
 ```
-Examples: 
-<br>`cp *.fas dir/`
-<br>`cat seq[AB].fas`
 
 ### Variables
 
@@ -64,9 +61,9 @@ echo ${VAR}           # print current value of variable (== echo $VAR)
 ```
 Examples for important pre-defined variables:
 ```bash
-HOME   # path to home directory`
-PATH   # list of directories that will be searched for executables`
-PS1    # prompt layout`
+HOME   # path to home directory
+PATH   # list of directories that will be searched for executables
+PS1    # prompt layout
 ```
 
 ### Loops
