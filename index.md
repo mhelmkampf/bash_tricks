@@ -86,7 +86,10 @@ for item in <list> ; do <command1> ; <command2> ; ... ; done
 for i in A B C ; do echo ${i} ; done
 for i in {1..3} ; do echo ${i} ; done
 
-# If the list consists of lines in file, use a while loop
+# Wildcards can be used to create a list too
+for FILE in *.fas ; do echo ${FILE} ; done
+
+# To loop over the lines in a file, use while
 while read LINE ; do cat ${LINE}.fas ; done < list.txt
 
 # If-else statement
