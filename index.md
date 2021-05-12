@@ -61,14 +61,12 @@ VAR=7                 # assign 7 to variable
 VAR=$(command)        # assign command output, e.g. VAR=$(awk '{ print $1 }' file)
 
 echo ${VAR}           # print current value of variable (== echo $VAR)
-```
+
 Examples for important pre-defined variables:
-<br>
-`HOME   # path to home directory`
-<br>
-`PATH   # list of directories that will be searched for executables`
-<br>
-`PS1    # prompt layout`
+HOME   # path to home directory`
+PATH   # list of directories that will be searched for executables`
+PS1    # prompt layout`
+```
 
 ### Loops
 
@@ -90,7 +88,7 @@ for item in <list> ; do <command1> ; <command2> ; ... ; done
 for i in A B C ; do echo ${i} ; done
 for i in {1..3} ; do echo ${i} ; done
 
-# If the list are lines of a file, use a while loop
+# If the list consists of lines in file, use a while loop
 while read LINE ; do cat ${LINE}.fas ; done < list.txt
 
 # If-else statement
