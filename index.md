@@ -72,7 +72,7 @@ Examples for important pre-defined variables:
 
 ### Loops
 
-Loops allow you to perform an action multiple times, or repeat the same action with slight variations (e.g. multiple input files or lines). `for` and `while` loops are similar – usually `for` loops are used when the number of iterations is known and/or small. `while` loops are better suited for an unknown and/or large number of iterations.
+Loops allow you to perform a set of commands multiple times, or repeat a set of commands with slight variations (e.g. multiple input files or lines). `for` and `while` loops are similar – usually `for` loops are used when the number of iterations is known and/or small. `while` loops are better suited for an unknown and/or large number of iterations.
 
 ```bash
 # General syntax: for each item in list, perform command(s)
